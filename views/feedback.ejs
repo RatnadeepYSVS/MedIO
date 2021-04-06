@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/style') -%>
+        <style>
+            .login {
+                margin: 30px auto;
+                display: block;
+                background-color: #f7f7f7;
+                width: 60%;
+                font-size: 20px;
+                padding: 30px;
+                text-align: center;
+            }
+            
+            .login form input {
+                display: block;
+                margin: 30px auto;
+                width: 50%;
+                padding: 10px;
+            }
+            
+            .login form textarea {
+                display: block;
+                margin: 10px auto;
+                padding: 10px;
+            }
+            
+            .login form button {
+                background-color: red;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 20px;
+                border-radius: 20px;
+                cursor: pointer;
+            }
+            
+            .mail {
+                margin-top: 20px;
+            }
+            
+            .sp {
+                margin-top: 30px;
+                margin-bottom: 10px;
+            }
+            
+            .spp {
+                margin-top: 20px;
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('partials/header'); -%>
+        <div class="holder" style="padding:30px;">
+            <div class="login">
+                <h1> Feedback.</h1>
+                <p class="pone" style="color: red;"></p>
+                <form action="/feedback" method="post">
+                    <input name="name" placeholder="Name" required>
+                    <input name="email" placeholder="MedIO Account Email" required>
+                    <input name="phone" placeholder="Phone" required>
+                    <input name="city" type="text" placeholder="City" required>
+                    <textarea name="query" id="" cols="50" rows="5" placeholder="Your query" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <script defer src="../js/feedback.js"></script>
+</body>
+
+</html>

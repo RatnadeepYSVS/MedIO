@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/style'); -%>
+        <style>
+            .bloggs {
+                display: block;
+                margin: 40px auto;
+                background-color: white;
+                width: 80%;
+                padding: 30px;
+            }
+            
+            .blogs {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            
+            .blog {
+                background-color: #DAD4CD;
+                margin: 40px 30px;
+                padding: 30px;
+                width: 20%;
+                text-align: center;
+            }
+            
+            .blog a {
+                display: block;
+                text-decoration: none;
+                margin: 10px;
+                background-color: #FF4713;
+                padding: 3px;
+                border-radius: 10px;
+                color: white
+            }
+            
+            .blog img {
+                padding: 10px;
+            }
+            
+            body {
+                background-color: #f7f7f7;
+            }
+            
+            .paginatebtns {
+                display: block;
+                padding: 12px;
+                background-color: red;
+                margin: 10px auto;
+                text-decoration: none;
+                width: 10%;
+                text-align: center;
+                font-size: 20px;
+                color: white;
+                border-radius: 22px;
+            }
+            
+            @media (max-width:770px) {
+                .blogs,
+                .container {
+                    width: 200px;
+                    display: block;
+                    margin: 10px auto;
+                }
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('partials/header'); -%>
+        <div class="holder" style="padding:10px">
+            <div class="bloggs">
+                <h1 style="text-align: center;font-weight: bold;font-size:40px">Blogs</h1>
+                <div class="blogs">
+                    <% Blogs.forEach(blog =>{%>
+                        <div class="blog container">
+                            <img src="/images/disp.png" alt="" style="width:80%">
+                            <p>
+                                TagLine :-
+                                <%= blog.tagline.toUpperCase() %>
+                            </p>
+                            <a href="/blogs/<%= blog.id %>">View Blog</a>
+                            <% if(user && blog.blogger==user.name){ %>
+                                <a href="/editblog/<%= blog.id %>">Edit Blog</a>
+                                <a href="/removeblog/<%= blog.id %>">Delete Blog</a>
+                                <% } %>
+                                    <a href="/users/<%= blog.blogger %>"> View blogger
+                                </a>
+                        </div>
+                        <% }) %>
+                </div>
+                <% if(blogs.after && blogs.after.page){%>
+                    <a href="/home?page=<%=blogs.after.page %>" class="paginatebtns onebtn">Next</a>
+                    <% } %>
+                        <% if(blogs.before && blogs.before.page){%>
+                            <a href="/home?page=<%=blogs.before.page %>" class="paginatebtns twobtn">Previous</a>
+                            <% } %>
+            </div>
+        </div>
+</body>
+
+</html>

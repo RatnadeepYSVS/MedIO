@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/style') -%>
+        <style>
+            .imhold img {
+                display: block;
+                margin: 10px auto;
+            }
+            
+            .blogs {
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 15vw;
+            }
+            
+            .uss {
+                text-align: center;
+            }
+            
+            .holderme {
+                display: block;
+                margin: auto
+            }
+            
+            .blog {
+                background-color: #DAD4CD;
+                margin: 40px 30px;
+                padding: 30px;
+                width: 20%;
+                text-align: center;
+            }
+            
+            .blog a {
+                display: block;
+                text-decoration: none;
+                margin: 10px;
+                background-color: #FF4713;
+                padding: 3px;
+                border-radius: 10px;
+                color: white
+            }
+            
+            .user {
+                background-color: red;
+                padding: 10px;
+                color: white;
+                border-radius: 30px;
+                transition: all .5s ease-in;
+            }
+            
+            .user:hover {
+                padding: 10px;
+                color: black;
+                border-radius: 30px;
+            }
+            
+            @media (max-width:720px) {
+                .blogs {
+                    display: block;
+                    margin-left: -4px;
+                }
+                .blog {
+                    width: 200px;
+                    display: block;
+                    margin: 3px auto;
+                }
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('partials/header') -%>
+        <div class="mainon">
+            <div class="us">
+                <div class="imhold">
+                    <img src="https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png" alt="user" style="width:15%;border-radius:50%">
+                    <div class="uss">
+                        <h1 style="color:black;font-weight:bold">
+                            <%= revert.name %>
+                        </h1>
+                        <h4 style="margin-bottom: 20px;color:black;font-weight:bold">
+                            <%= revert.email %>
+                        </h4>
+                        <h4>
+                            <% if(user && user.name==revert.name){ %>
+                                <a href="/donations" class=" user a">
+                                Donate
+                            </a>
+                                <% }%>
+                        </h4>
+                    </div>
+                </div>
+
+            </div>
+            <hr>
+            <h1 style="text-align: center;font-weight: bold; font-size:30px">
+                Blogs Written
+                <%= revert.blogs.length %>
+            </h1>
+            <% if(revert.blogs.length==0) { %>
+                <h3 style="text-align:center;display: block;margin:auto">No Blogs Written.</h3>
+                <% } %>
+        </div>
+        <div class="blogs">
+            <% if(revert.blogs.length) {%>
+                <% revert.blogs.forEach(blog=>{ %>
+                    <div class="blog ">
+                        <%= blog.tagline.toUpperCase() %>
+                            <a href="/blogs/<%=blog.id %>">View Blog</a>
+                    </div>
+                    <% }) %>
+                        <% } %>
+        </div>
+</body>
+
+</html>

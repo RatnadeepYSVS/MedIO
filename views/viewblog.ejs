@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/style') -%>
+        <style>
+            .blog {
+                padding: 30px;
+                margin-top: 60px;
+                text-align: center;
+                width: 60%;
+                display: block;
+                margin: auto;
+                background-color: white;
+            }
+            
+            .blog h1 {
+                margin: 10px;
+            }
+            
+            .content {
+                text-align: justify;
+                padding: 30px;
+            }
+        </style>
+</head>
+
+<body style="background-color: #f7f7f7">
+    <%- include('partials/header') -%>
+        <div class="holder" style="padding:30px;">
+            <div class="blog">
+                <h1 style="color:black;font-size:20px;font-weight:bold">
+                    <%= blog.tagline.toUpperCase() %>
+                </h1>
+                <div class="content">
+                    <%= blog.blog  %>
+                        <h2 style="float: right;margin-top:20px;">
+                            <%= blog.blogger %>
+                        </h2>
+                </div>
+
+            </div>
+        </div>
+</body>
+
+</html>

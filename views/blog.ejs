@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/style') -%>
+        <style>
+            .put {
+                margin-top: 20px;
+                display: block;
+                margin: auto;
+                font-weight: bolder;
+                margin-bottom: 30px;
+                padding: 3px 13px;
+                font-size: 20px;
+                outline: none
+            }
+            
+            .wid {
+                width: 500px;
+                text-align: center;
+                border: none;
+                border-bottom: 1px solid black;
+            }
+            
+            .iid {
+                color: white;
+                background-color: red;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 20px;
+            }
+            
+            @media (max-width:800px) {
+                .caro {
+                    flex-direction: column;
+                }
+                .caro img {
+                    display: block;
+                    width: 100%;
+                }
+                textarea {
+                    resize: vertical;
+                }
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('partials/header') -%>
+        <div class="holdermain" style="padding:30px;">
+            <div class="holderform" style="padding:30px">
+                <h1 style="text-align: center;margin-bottom: 30px;font-size:20px;font-weight: bold;">Write A Blog.</h1>
+                <form action="/blog" method="POST">
+                    <input type="text" name="tagline" class="put wid" placeholder="..//Title Of The Blog...">
+                    <textarea name="blog" rows="50" cols="100" style="display:block;margin: 10px auto;font-weight: bold;font-size:20px;" placeholder="//Start Writing From HERE.."></textarea>
+                    <button class="put iid" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <script src="../js/blog.js"></script>
+</body>
+
+</html>

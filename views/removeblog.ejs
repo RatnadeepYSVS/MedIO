@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/style') -%>
+        <style>
+            .blog {
+                padding: 30px;
+                margin-top: 60px;
+                text-align: center;
+                width: 60%;
+                display: block;
+                margin: auto;
+                background-color: white;
+            }
+            
+            .blog h1 {
+                margin: 10px;
+            }
+            
+            form button {
+                display: block;
+                margin: 20px auto;
+                border: none;
+                background-color: red;
+                color: white;
+                padding: 10px 30px;
+                font-size: 20px;
+                border-radius: 30px;
+                cursor: pointer;
+            }
+            
+            .content {
+                text-align: justify;
+                padding: 30px;
+            }
+        </style>
+</head>
+
+<body style="background-color: #f7f7f7;">
+    <%- include('partials/header') -%>
+        <div class="hol" style="padding:20px;">
+            <div class="blog">
+                <h1 style="color:black;font-weight:bold;font-size:20px;">
+                    <%= doc.tagline.toUpperCase() %>
+                </h1>
+                <div class="content">
+                    <%= doc.blog  %>
+                        <h2 style="float: right;margin-top:20px;">
+                            <%= doc.blogger %>
+                        </h2>
+                </div>
+
+            </div>
+            <form action="/delete/<%= doc.id %>?_method=DELETE" method="POST">
+                <button type="submit" class="deletee">Delete Blog</button>
+            </form>
+        </div>
+</body>
+
+</html>
+
+</html>

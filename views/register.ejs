@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <%- include('partials/style') -%>
+        <style>
+            .login {
+                margin: 60px auto;
+                display: block;
+                background-color: white;
+                width: 40%;
+                text-align: center;
+                font-size: 20px;
+                padding: 30px;
+            }
+            
+            .login form input {
+                display: block;
+                margin: 30px auto;
+                width: 50%;
+                padding: 10px;
+            }
+            
+            .login form button {
+                background-color: red;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 20px;
+                border-radius: 20px;
+                cursor: pointer;
+            }
+            
+            .mail {
+                margin-top: 20px;
+            }
+            
+            .sp {
+                margin-top: 30px;
+                margin-bottom: 10px;
+            }
+            
+            .spp {
+                margin-top: 20px;
+            }
+            
+            @media (max-width:800px) {
+                .login {
+                    width: 300px;
+                }
+                .login form input {
+                    width: 200px;
+                }
+            }
+        </style>
+</head>
+
+<body style="background-color: #f7f7f7;">
+    <%- include('partials/header') -%>
+        <div class="holder" style="padding:30px;">
+            <div class="login">
+                <h1>Sign-Up.</h1>
+                <p class="pone" style="color: red;"></p>
+                <form action="/register" method="post">
+                    <input name="name" placeholder="name" required>
+                    <input name="email" placeholder="email" required>
+                    <input name="phone" placeholder="phone" required>
+                    <input type="password" name="passcode" placeholder="passcode" required>
+                    <button type="submit">Submit</button>
+                </form>
+                <p class="sp">Have an Account. <span><a href="/login">Sign In</a></span> </p>
+                <p class="spp">By Creating An Account.You Are Accepting The T&C.</p>
+
+            </div>
+        </div>
+        <script defer src="../js/regist.js"></script>
+</body>
+
+</html>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/style') -%>
+        <style>
+            .caro {
+                padding: 10px;
+                display: flex;
+            }
+            
+            .caro img {
+                width: 50%;
+            }
+            
+            .caroo {
+                padding: 20px;
+                text-align: justify;
+                line-height: 30px;
+            }
+            
+            @media (max-width:800px) {
+                .caro {
+                    flex-direction: column;
+                }
+                .caro img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('partials/header') -%>
+        <div class="main">
+            <div class="caro">
+                <img src="https://images.unsplash.com/photo-1588615419957-bf66d53c6b49?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" alt="">
+                <div class="caroo">
+                    <h1 style="font-weight: bold;">Donations-MedIO</h1>
+                    <h2>The COVID-19 Solidarity Response Fund gives individuals, companies, and philanthropies the ability to directly support their efforts to combat the pandemic.The coronavirus (COVID-19) pandemic has already impacted communities around
+                        the world.As a precautionary health measure for our support specialists in light of COVID-19, we're operating with a limited team. Thanks for your patience, as it may take longer than usual to connect with us. </h2>
+
+                    <form action="donations" method="POST">
+                        <script src="//checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="<%= pubkey %>" data-amount="50000" data-currency="inr" data-name="<%= user.name %>" data-description="User Donation" data-locale="auto">
+                        </script>
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

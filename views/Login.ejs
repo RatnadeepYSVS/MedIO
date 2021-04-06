@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <%- include('partials/style'); -%>
+        <style>
+            .login {
+                margin: 60px auto;
+                display: block;
+                background-color: white;
+                width: 40%;
+                text-align: center;
+                font-size: 20px;
+                padding: 30px;
+            }
+            
+            .login form input {
+                display: block;
+                margin: 30px auto;
+                width: 50%;
+                padding: 10px;
+            }
+            
+            .login form button {
+                background-color: red;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 20px;
+                border-radius: 20px;
+                cursor: pointer;
+            }
+            
+            .mail {
+                margin-top: 20px;
+            }
+            
+            .sp {
+                margin-top: 50px;
+                margin-bottom: 30px;
+            }
+            
+            @media (max-width:800px) {
+                .login {
+                    width: 300px;
+                }
+                .login form input {
+                    width: 200px;
+                }
+            }
+        </style>
+</head>
+
+<body style="background-color: #F7F7F7;">
+    <%- include('partials/header'); -%>
+        <div class="holder" style="padding:30px;">
+            <div class="login">
+                <h1>Sign-In.</h1>
+                <form action="/login" method="post">
+                    <p class="mail" style="color: red;"></p>
+                    <input name="email" placeholder="email" required>
+                    <p class="passcode" style="color: red;"></p>
+                    <input type="password" name="passcode" placeholder="passcode" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p class="sp">Don't Have an Account. <span><a href="/register">Create One</a></span> </p>
+            </div>
+        </div>
+        <script defer src="../js/login.js"></script>
+</body>
+
+</html>

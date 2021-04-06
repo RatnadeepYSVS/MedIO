@@ -1,0 +1,66 @@
+<head>
+    <style>
+        @media(max-width:1800px) {}
+        
+        @media(max-width:1500px) {}
+        
+        @media(max-width:880px) {
+            .shoo {
+                display: none;
+            }
+            .show {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation" style="padding:10px;background-color: #786fa6">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/" style="font-size:30px;color:white">
+                <i class="fas fa-home"></i>Home
+            </a>
+            <a class="navbar-burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+
+
+        <div class="navbar-end">
+            <div class="navbar-item shoo">
+                <div class="buttons">
+                    <% if(user){ %>
+                        <a class="button is-primary" href="/users/<%= user.name %>">
+                            <strong><%= user.name %></strong>
+                        </a>
+                        <a class="button is-primary" href="/blog">
+                            <strong>Write A Blog</strong>
+                        </a>
+                        <a class="button is-primary" href="/logout">
+                            <strong>LogOut</strong>
+                        </a>
+                        <% } else{ %>
+                            <a class="button is-primary" href="/login">
+                                <strong>Login</strong>
+                            </a>
+                            <a class="button is-primary" href="/register">
+                                <strong>SignUp</strong>
+                            </a>
+                            <% } %>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <script type='text/javascript'>
+        const burg = document.querySelector('#burger')
+        const disp = document.querySelector('.shoo')
+        burg.addEventListener('click', () => {
+            disp.classList.toggle('show')
+        })
+    </script>
+</body>
