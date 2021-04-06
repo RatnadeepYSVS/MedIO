@@ -29,3 +29,10 @@ BLOG
 
 ![blogg](https://user-images.githubusercontent.com/68638971/113674995-7a117980-96d8-11eb-952d-b471a31731b6.jpg)
 
+DONATIONS  
+
+![donations](https://user-images.githubusercontent.com/68638971/113675600-27848d00-96d9-11eb-9b38-239043ec7c90.jpg)
+
+STRIPE
+
+![pay](https://user-images.githubusercontent.com/68638971/113675924-7f22f880-96d9-11eb-8eb9-efb9f5daa6a0.jpg)
