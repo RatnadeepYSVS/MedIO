@@ -12,7 +12,7 @@ A blog Web Application For People Who Are Interested In Writing Blogs.
  2 Authenticated   
  Blogs are only visible to other Users Only if they are authenticated.   
  3 Donations  
- Stripe Api is used to accept contributions and donations from the users. 
+ Stripe Api is used to accept donations from the users. 
 # Demo of App
 I thought of deploying the app but there are some other things i am working on.The app will be deployed after these fixes.Right Now I will show you how it looks
 
