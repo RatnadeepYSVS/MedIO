@@ -1,5 +1,6 @@
 # MedIO
 A blog Web Application For People Who Are Interested In Writing Blogs.
+Please Note As The App is in development stage i have taken blogs from web once the app is in production i will remove all the previous blogs here. 
 # Technologies Used
  1 Node.JS + Express.JS  
  2 MongoDB  
