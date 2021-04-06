@@ -1,7 +1,7 @@
 # MedIO
 A blog Web Application For People Who Are Interested In Writing Blogs.  
 Please Note As The App is in development stage i have taken blogs from web once the app is in production i will remove all the previous blogs here.  
-To run the App Make sure U have navigated to the right folder and run the command npm run start.
+To run the App Make sure U have navigated to the right folder and U have Installed Node.js and Npm in your PC and run the command npm run start.
 # Technologies Used
  1 Node.JS + Express.JS  
  2 MongoDB  
